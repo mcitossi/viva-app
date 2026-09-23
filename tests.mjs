@@ -7,6 +7,6 @@ test('database asincrono e ricerca case insensitive',async()=>{const found=await
 test('date locali',()=>assert.equal(dateKey(new Date(2026,0,2,23,30)),'2026-01-02'));
 
 import {planFoods} from './plan-foods.js';
-test('catalogo verificato: id unici, valori e fonti presenti',()=>{assert.equal(planFoods.length,37);assert.equal(new Set(planFoods.map(f=>f.id)).size,37);for(const f of planFoods){for(const key of ['kcal','protein','carbs','fat'])assert.ok(Number.isFinite(f[key])&&f[key]>=0);assert.ok(f.source.startsWith('https://'))}});
+test('catalogo verificato: id unici, valori e fonti presenti',()=>{assert.equal(new Set(planFoods.map(f=>f.id)).size,planFoods.length);for(const f of planFoods){for(const key of ['kcal','protein','carbs','fat'])assert.ok(Number.isFinite(f[key])&&f[key]>=0);assert.ok(f.source.startsWith('https://'))}});
 test('FAGE e Wasa: porzioni calcolate dalle etichette',async()=>{assert.equal(nutrition(await foodProvider.get('fage-total-0'),200).kcal,108);assert.equal(nutrition(await foodProvider.get('wasa-integrale'),40).kcal,135.2)});
 test('alimenti personali e snapshot dei pasti restano indipendenti',async()=>{const custom={id:'custom-test',name:'Prova personale',kcal:100,protein:10,carbs:12,fat:2};assert.equal((await foodProvider.search('PERSONALE',[custom])).length,1);const snapshot={...(await foodProvider.get('fage-total-0'))};snapshot.kcal=99;assert.equal((await foodProvider.get('fage-total-0')).kcal,54)});

@@ -443,5 +443,29 @@ export const planFoods = [
     "sourceLabel": "Etichetta su Despar",
     "note": "Versione PRO da 200 g. Il piano non specifica la versione: verifica che la tua confezione riporti questi valori.",
     "verifiedOn": "2026-09-22"
+  },
+  {
+    "id": "fage-total-5",
+    "name": "Yogurt greco bianco 5% · FAGE Total",
+    "kcal": 93,
+    "protein": 9,
+    "carbs": 3,
+    "fat": 5,
+    "source": "https://it.fage/prodotti/fage-total-5/fage-total-5-450g",
+    "sourceLabel": "FAGE",
+    "note": "Valori per 100 g di FAGE Total bianco 5%. Per altre marche verifica l’etichetta.",
+    "verifiedOn": "2026-09-23"
+  },
+  {
+    "id": "mevgal-greek-10",
+    "name": "Yogurt greco bianco 10% · MEVGAL",
+    "kcal": 129,
+    "protein": 5.5,
+    "carbs": 3.5,
+    "fat": 10,
+    "source": "https://www.odysea.com/product/mevgal-greek-yoghurt-cows-milk-500g/",
+    "sourceLabel": "MEVGAL 500 g · scheda Odysea",
+    "note": "Valori per 100 g della variante MEVGAL 10% da 500 g nella scheda Odysea. Formulazioni e mercati possono differire: confronta la confezione.",
+    "verifiedOn": "2026-09-23"
   }
 ];
